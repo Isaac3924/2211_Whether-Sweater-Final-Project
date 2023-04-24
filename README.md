@@ -97,6 +97,8 @@ Things you may want to cover:
 
 * The specific endpoint used to retrieve information on slaries was > https://api.teleport.org/api/urban_areas/slug:#{location}/salaries/
 
+* I wonder if there is a way to limit the jobs coming in via the endpoint. Couldn't find one fast enough and resolved to iterate through and take what I need via the serializer.
+
 * Was thrown off a bit thinking needed multiple endpoints but found only one needed. Presuming the user enters in a good location. Which the instructions said to.
 
 * The facade is more bog-standard compared to my others, but still adds another degree of security. And is good practice.
