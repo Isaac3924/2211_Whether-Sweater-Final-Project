@@ -1,6 +1,8 @@
 class Api::V1::SalariesController < ApplicationController
   def index
-    forecast = SalariesFacade.new(MapFacade.new(params[:location]).coordinates).forecast
-    render json: SalariesSerializer.format_forecast(forecast)
+    salaries = SalariesFacade.new(params[:destination]).get_salaries
+    forecast = ForecastFacade.new(MapFacade.new(params[:destination]).coordinates).forecast
+    require 'pry'; binding.pry
+    render json: SalariesSerializer.format_salaries(salaries)
   end
 end

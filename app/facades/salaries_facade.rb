@@ -1,4 +1,4 @@
-class ForecastFacade
+class SalariesFacade
   attr_reader :location
 
   def initialize(location)
