@@ -9,8 +9,6 @@ class SalariesService
 
   def get_url(url)
     response = conn.get(url)
-    require 'pry'; binding.pry
-    x = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
+    JSON.parse(response.body, symbolize_names: true)
   end 
 end

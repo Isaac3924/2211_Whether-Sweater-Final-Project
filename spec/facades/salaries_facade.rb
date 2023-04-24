@@ -1,10 +1,18 @@
 require "rails_helper"
 
-describe SalariesService do
-  context "instance methods", :vcr do
-    it "can get job min and max slaries of jobs of urban area" do
-      json_body = SalariesService.new.get_jobs("chicago")
+RSpec.describe SalariesFacade do
+  before :each do
+    @test_facade = SalariesFacade.new("chicago")
+  end
 
+  describe "instance methods" do
+    it "has a location" do
+      expect(@test_facade.location).to eq("chicago")
+    end
+
+    it "can return the salaries of the location", :vcr do
+      json_body = @test_facade.get_salaries
+  
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:salaries)
       expect(json_body[:salaries]).to be_an(Array)
