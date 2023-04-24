@@ -90,3 +90,19 @@ Things you may want to cover:
 * Get the API key for map quest from this link: https://developer.mapquest.com/documentation/ and clicking 'Grab the Key'. Paste it into the config/application.yml as a string value to the MAPQUEST_DATABASE_KEY variable.
 
 * Get the API key for map quest from this link: https://www.weatherapi.com/ and clicking 'Sign Up'. Fill in the forms with your email and password of choice, complete captcha, agreeing to terms, and clicking 'Sign Up'. You will be ridrected to a page saying to ait for a verification email in your provided email. THERE IS NO VERFICATION. Go ahead and log in. Copy the provided API key and paste it into the config/application.yml as a string value to the WEATHER_DATABASE_KEY variable.
+
+# FINAL ASSESMENT ONLY
+
+* Utilizes teleport API and other APIs to provide forecast as well as the minimum and maximum the listed occupations make within given parameter of city
+
+* The specific endpoint used to retrieve information on slaries was > https://api.teleport.org/api/urban_areas/slug:#{location}/salaries/
+
+* Was thrown off a bit thinking needed multiple endpoints but found only one needed. Presuming the user enters in a good location. Which the instructions said to.
+
+* The facade is more bog-standard compared to my others, but still adds another degree of security. And is good practice.
+
+* The salaries controller leads into the facade, the forecast facade, and then the serializer, tying it all together. Not to mention is pointed to via the routes. Unsure if #index is the correct way to go. Would like to hear feedback on that.
+
+* Otherwise, I feel my code is a bit slap-dash here and there. Could handle serailizing better too, I think. If you could provide some examples in that regard it'd be appreciated.
+
+* I am proud of my specs though. Think I did a good job handling fields that shouldn't be present.
