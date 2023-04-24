@@ -84,3 +84,9 @@ Things you may want to cover:
 * Utilize external API
 
 # Setup
+
+* Clone this repository to your local machine using 'git clone <SSH Key here>'
+
+* Get the API key for map quest from this link: https://developer.mapquest.com/documentation/ and clicking 'Grab the Key'. Paste it into the config/application.yml as a string value to the MAPQUEST_DATABASE_KEY variable.
+
+* Get the API key for map quest from this link: https://www.weatherapi.com/ and clicking 'Sign Up'. Fill in the forms with your email and password of choice, complete captcha, agreeing to terms, and clicking 'Sign Up'. You will be ridrected to a page saying to ait for a verification email in your provided email. THERE IS NO VERFICATION. Go ahead and log in. Copy the provided API key and paste it into the config/application.yml as a string value to the WEATHER_DATABASE_KEY variable.
