@@ -15,14 +15,14 @@ class SalariesSerializer
             summary: forecast[:current][:condition][:text],
             temperature: forecast[:current][:temp_f].round.to_s + " F"
           },
-          salaries: salaries.map do |salary|
-           {
+          salaries: salaries[:salaries].map do |salary|
             if salary[:job][:title] == "Data Analyst" || salary[:job][:title] == "Data Scientist" || salary[:job][:title] == "Mobile Developer" || salary[:job][:title] == "QA Engineer" || salary[:job][:title] == "Software Engineer" || salary[:job][:title] == "Systems Administratot" || salary[:job][:title] == "Web Developer"
-              job_title: salary[:job][:title],
-              min: "$"salary[:salary_percentiles][:percentile_25].sprintf('%.2f').gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,'),
-              max: "$"salary[:salary_percentiles][:percentile_75].sprintf('%.2f').gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+              {
+                job_title: salary[:job][:title],
+                min: "$ " + sprintf('%.2f',salary[:salary_percentiles][:percentile_25] ).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,'),
+                max: "$ " + sprintf('%.2f',salary[:salary_percentiles][:percentile_75] ).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
+              }
             end
-           }
           end
         }
       }

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-04-24T10:57:54-06:00">2023-04-24T10:57:54-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-04-24T11:11:04-06:00">2023-04-24T11:11:04-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  92.78%
+  95.04%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.41
+         3.48
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>277</b> relevant lines,
-    <span class="green"><b>257</b> lines covered</span> and
-    <span class="red"><b>20</b> lines missed. </span>
+    <b>282</b> relevant lines,
+    <span class="green"><b>268</b> lines covered</span> and
+    <span class="red"><b>14</b> lines missed. </span>
     (<span class="green">
-  92.78%
+  95.04%
 </span>
 )
   </div>
@@ -83,12 +83,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5274a1f26f99743be4b44eaffcfbcdcbee885f03" class="src_link" title="app/controllers/api/v1/salaries_controller.rb">app/controllers/api/v1/salaries_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">6</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">5</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">2.67</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">3.40</td>
             
           </tr>
         
@@ -110,7 +110,7 @@
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">4.11</td>
+            <td class="cell--number">4.44</td>
             
           </tr>
         
@@ -150,11 +150,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#85b7727eddde2f802025786584e8f1e7c032885e" class="src_link" title="app/serializers/salaries_serializer.rb">app/serializers/salaries_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">30</td>
+            <td class="cell--number">31</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0.00</td>
+            <td class="cell--number">49.67</td>
             
           </tr>
         
@@ -165,7 +165,7 @@
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">6.56</td>
+            <td class="cell--number">7.11</td>
             
           </tr>
         
@@ -176,7 +176,7 @@
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">9.78</td>
+            <td class="cell--number">9.89</td>
             
           </tr>
         
@@ -303,12 +303,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e849884f913937ad7730e9420a086e33348f98b9" class="src_link" title="spec/requests/api/v1/salaries_request_spec.rb">spec/requests/api/v1/salaries_request_spec.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">34.48 %</td>
+            <td class="red strong cell--number t-file__coverage">51.72 %</td>
             <td class="cell--number">49</td>
             <td class="cell--number">29</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">0.52</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">0.69</td>
             
           </tr>
         
@@ -463,8 +463,8 @@
   <div class="header">
     <h3>app/controllers/api/v1/salaries_controller.rb</h3>
     <h4>
-      <span class="yellow">
-  83.33%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -473,9 +473,9 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
+      <b>5</b> relevant lines.
       <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -530,29 +530,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="5">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="5" data-linenumber="5">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    x = render json: SalariesSerializer.format_salaries(params[:destination], salaries, forecast)</code>
+            <code class="ruby">    render json: SalariesSerializer.format_salaries(params[:destination], salaries, forecast)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="6">
-            
-            
-
-            
-
-            <code class="ruby">    require &#39;pry&#39;; binding.pry</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -563,7 +552,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -702,8 +691,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="5">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="5">
+            <span class="hits">12</span>
             
 
             
@@ -746,8 +735,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="9">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="11" data-linenumber="9">
+            <span class="hits">11</span>
             
 
             
@@ -801,8 +790,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="14">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="11" data-linenumber="14">
+            <span class="hits">11</span>
             
 
             
@@ -1825,8 +1814,8 @@
     
 
     <div class="t-line-summary">
-      <b>0</b> relevant lines.
-      <span class="green"><b>0</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1838,8 +1827,8 @@
     <ol>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="1">
-            
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
             
 
             
@@ -1849,8 +1838,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="2">
-            
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
             
 
             
@@ -1871,8 +1860,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
             
 
             
@@ -1893,8 +1882,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
+          <li class="covered" data-hits="5" data-linenumber="6">
+            <span class="hits">5</span>
             
 
             
@@ -2031,18 +2020,18 @@
 
             
 
-            <code class="ruby">          salaries: salaries.map do |salary|</code>
+            <code class="ruby">          salaries: salaries[:salaries].map do |salary|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="260" data-linenumber="19">
+            <span class="hits">260</span>
             
 
-            <code class="ruby">           {</code>
+            
+
+            <code class="ruby">            if salary[:job][:title] == &quot;Data Analyst&quot; || salary[:job][:title] == &quot;Data Scientist&quot; || salary[:job][:title] == &quot;Mobile Developer&quot; || salary[:job][:title] == &quot;QA Engineer&quot; || salary[:job][:title] == &quot;Software Engineer&quot; || salary[:job][:title] == &quot;Systems Administratot&quot; || salary[:job][:title] == &quot;Web Developer&quot;</code>
           </li>
         </div>
       
@@ -2053,18 +2042,18 @@
 
             
 
-            <code class="ruby">            if salary[:job][:title] == &quot;Data Analyst&quot; || salary[:job][:title] == &quot;Data Scientist&quot; || salary[:job][:title] == &quot;Mobile Developer&quot; || salary[:job][:title] == &quot;QA Engineer&quot; || salary[:job][:title] == &quot;Software Engineer&quot; || salary[:job][:title] == &quot;Systems Administratot&quot; || salary[:job][:title] == &quot;Web Developer&quot;</code>
+            <code class="ruby">              {</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="21">
+            <span class="hits">30</span>
             
 
-            <code class="ruby">              job_title: salary[:job][:title],</code>
+            
+
+            <code class="ruby">                job_title: salary[:job][:title],</code>
           </li>
         </div>
       
@@ -2075,7 +2064,7 @@
 
             
 
-            <code class="ruby">              min: &quot;$&quot;salary[:salary_percentiles][:percentile_25].sprintf(&#39;%.2f&#39;).gsub(/(\d)(?=(\d{3})+(?!\d))/, &#39;\\1,&#39;),</code>
+            <code class="ruby">                min: &quot;$ &quot; + sprintf(&#39;%.2f&#39;,salary[:salary_percentiles][:percentile_25] ).gsub(/(\d)(?=(\d{3})+(?!\d))/, &#39;\\1,&#39;),</code>
           </li>
         </div>
       
@@ -2086,7 +2075,7 @@
 
             
 
-            <code class="ruby">              max: &quot;$&quot;salary[:salary_percentiles][:percentile_75].sprintf(&#39;%.2f&#39;).gsub(/(\d)(?=(\d{3})+(?!\d))/, &#39;\\1,&#39;)</code>
+            <code class="ruby">                max: &quot;$ &quot; + sprintf(&#39;%.2f&#39;,salary[:salary_percentiles][:percentile_75] ).gsub(/(\d)(?=(\d{3})+(?!\d))/, &#39;\\1,&#39;)</code>
           </li>
         </div>
       
@@ -2097,7 +2086,7 @@
 
             
 
-            <code class="ruby">            end</code>
+            <code class="ruby">              }</code>
           </li>
         </div>
       
@@ -2108,7 +2097,7 @@
 
             
 
-            <code class="ruby">           }</code>
+            <code class="ruby">            end</code>
           </li>
         </div>
       
@@ -2119,7 +2108,7 @@
 
             
 
-            <code class="ruby">        }</code>
+            <code class="ruby">          end</code>
           </li>
         </div>
       
@@ -2130,7 +2119,7 @@
 
             
 
-            <code class="ruby">      }</code>
+            <code class="ruby">        }</code>
           </li>
         </div>
       
@@ -2141,7 +2130,7 @@
 
             
 
-            <code class="ruby">    }</code>
+            <code class="ruby">      }</code>
           </li>
         </div>
       
@@ -2152,12 +2141,23 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    }</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -2221,8 +2221,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="3">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="3">
+            <span class="hits">12</span>
             
 
             
@@ -2265,8 +2265,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="7">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="7">
+            <span class="hits">12</span>
             
 
             
@@ -2276,8 +2276,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="8">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="8">
+            <span class="hits">12</span>
             
 
             
@@ -2331,8 +2331,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="13">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="13">
+            <span class="hits">12</span>
             
 
             
@@ -2342,8 +2342,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="14">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="14">
+            <span class="hits">12</span>
             
 
             
@@ -2549,8 +2549,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="16" data-linenumber="14">
-            <span class="hits">16</span>
+          <li class="covered" data-hits="17" data-linenumber="14">
+            <span class="hits">17</span>
             
 
             
@@ -5473,7 +5473,7 @@
     <h3>spec/requests/api/v1/salaries_request_spec.rb</h3>
     <h4>
       <span class="red">
-  34.48%
+  51.72%
 </span>
 
       lines covered
@@ -5483,8 +5483,8 @@
 
     <div class="t-line-summary">
       <b>29</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>19</b> lines missed.</span>
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>14</b> lines missed.</span>
     </div>
 
     
@@ -5638,8 +5638,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
             
@@ -5682,8 +5682,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
-            
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
             
 
             
@@ -5726,8 +5726,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
-            
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
             
 
             
@@ -5792,8 +5792,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="28">
-            
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
             
 
             
@@ -5891,8 +5891,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="37">
-            
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
             
 
             

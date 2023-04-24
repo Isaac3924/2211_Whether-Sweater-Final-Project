@@ -18,10 +18,31 @@ RSpec.describe "Salaries API", type: :request do
         expect(response).to have_http_status(200)
       end
 
+      it "returns a destination" do
+        expect(JSON.parse(response.body)["data"]["attributes"]["destination"]).to eq("chicago")
+      end
+
       it "returns a forecast" do
-        expect(JSON.parse(response.body)["data"]["attributes"]["current_weather"]).to be_a(Hash)
-        expect(JSON.parse(response.body)["data"]["attributes"]["daily_weather"]).to be_an(Array)
-        expect(JSON.parse(response.body)["data"]["attributes"]["hourly_weather"]).to be_an(Array)
+        expect(JSON.parse(response.body)["data"]["attributes"]["forecast"]).to be_a(Hash)
+        expect(JSON.parse(response.body)["data"]["attributes"]["forecast"].keys).to eq(["summary", "temperature"])
+        expect(JSON.parse(response.body)["data"]["attributes"]["forecast"]["summary"]).to be_a(String)
+        expect(JSON.parse(response.body)["data"]["attributes"]["forecast"]["temperature"]).to be_a(String)
+        expect(JSON.parse(response.body)["data"]["attributes"]["forecast"]["temperature"]).to_not include(".")
+        expect(JSON.parse(response.body)["data"]["attributes"]["forecast"]["temperature"]).to include(" F")
+      end
+
+      it "returns salaries" do
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"]).to be_a(Array)
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].length).to eq(7)
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first.keys).to eq(["job_title", "min", "max"])
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["job_title"]).to be_a(String)
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["min"]).to be_a(String)
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["max"]).to be_a(String)
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["min"]).to include("$ ")
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["max"]).to include("$ ")
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["min"]).to include(".")
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["max"]).to include(".")
+        expect(JSON.parse(response.body)["data"]["attributes"]["salaries"].first["min"]).to_not include(" F")
       end
 
       it "returns a forecast with the correct attributes" do
