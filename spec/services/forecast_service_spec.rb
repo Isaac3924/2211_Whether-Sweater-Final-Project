@@ -3,7 +3,7 @@ require "rails_helper"
 describe ForecastService do
   context "instance methods", :vcr do
     it "can get forecast from coordinates" do
-      json_body = ForecastService.new.get_forecast(39.10713,-84.50413)
+      json_body = ForecastService.new.get_forecast("39.10713,-84.50413")
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:current)
       expect(json_body[:current]).to have_key(:last_updated)
