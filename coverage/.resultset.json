@@ -175,6 +175,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null
@@ -432,6 +433,60 @@
           null
         ]
       },
+      "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/spec/services/salaries_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/app/services/salaries_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/app/controllers/api/v1/forecast_controller.rb": {
         "lines": [
           1,
@@ -501,6 +556,6 @@
         ]
       }
     },
-    "timestamp": 1682329042
+    "timestamp": 1682352130
   }
 }

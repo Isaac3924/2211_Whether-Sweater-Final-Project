@@ -2,16 +2,16 @@ require "rails_helper"
 
 describe SalariesService do
   context "instance methods", :vcr do
-    it "can get the geoname id of a location" do
-      json_body = SalariesService.new.get_geo("chicago")
-    end
+    # it "can get the geoname id of a location" do
+    #   json_body = SalariesService.new.get_geo("chicago")
+    # end
 
-    it "can get href of urban area" do
-      json_body = SalariesService.new.get_ua("4887398")
-    end
+    # it "can get href of urban area" do
+    #   json_body = SalariesService.new.get_ua("4887398")
+    # end
 
     it "can get job min and max of urban area" do
-      json_body = SalariesService.new.get_jobs("salaries")
+      json_body = SalariesService.new.get_jobs("chicago")
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:salaries)
       expect(json_body[:salaries]).to be_an(Array)
