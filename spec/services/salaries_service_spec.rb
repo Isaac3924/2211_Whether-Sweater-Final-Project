@@ -2,21 +2,29 @@ require "rails_helper"
 
 describe SalariesService do
   context "instance methods", :vcr do
-    it "can get job min and max of location" do
-      json_body = SalariesService.new.get_jobs("chicago")
+    it "can get the geoname id of a location" do
+      json_body = SalariesService.new.get_geo("chicago")
+    end
+
+    it "can get href of urban area" do
+      json_body = SalariesService.new.get_ua("4887398")
+    end
+
+    it "can get job min and max of urban area" do
+      json_body = SalariesService.new.get_jobs("salaries")
       expect(json_body).to be_a(Hash)
-      expect(json_body).to have_key(:results)
-      expect(json_body[:results]).to be_an(Array)
-      expect(json_body[:results][0]).to have_key(:locations)
-      expect(json_body[:results][0][:locations]).to be_an(Array)
-      expect(json_body[:results][0][:locations][0]).to have_key(:latLng)
-      expect(json_body[:results][0][:locations][0][:latLng]).to be_a(Hash)
-      expect(json_body[:results][0][:locations][0][:latLng]).to have_key(:lat)
-      expect(json_body[:results][0][:locations][0][:latLng]).to have_key(:lng)
-      expect(json_body[:results][0][:locations][0][:latLng][:lat]).to be_a(Float)
-      expect(json_body[:results][0][:locations][0][:latLng][:lng]).to be_a(Float)
-      expect(json_body[:results][0][:locations][0][:latLng][:lat]).to eq(39.10713)
-      expect(json_body[:results][0][:locations][0][:latLng][:lng]).to eq(-84.50413)
+      expect(json_body).to have_key(:salaries)
+      expect(json_body[:salaries]).to be_an(Array)
+      expect(json_body[:salaries][15]).to have_key(:job)
+      expect(json_body[:salaries][15][:job]).to be_a(Hash)
+      expect(json_body[:salaries][15][:job]).to have_key(:title)
+      expect(json_body[:salaries][15][:job][:title]).to be_a(String)
+      expect(json_body[:salaries][15][:job]).to have_key(:salary_percentiles)
+      expect(json_body[:salaries][15][:job][:salary_percentiles]).to be_a(Hash)
+      expect(json_body[:salaries][15][:job][:salary_percentiles]).to have_key(:percentile_25)
+      expect(json_body[:salaries][15][:job][:salary_percentiles]).to have_key(:percentile_75)
+      expect(json_body[:salaries][15][:job][:salary_percentiles][:percentile_25]).to be_a(Float)
+      expect(json_body[:salaries][15][:job][:salary_percentiles][:percentile_75]).to be_a(Float)
     end
   end
 end
