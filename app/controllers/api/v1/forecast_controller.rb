@@ -1,7 +1,6 @@
 class Api::V1::ForecastController < ApplicationController
-  def show
-    require 'pry'; binding.pry
-    forecast = ForecastFacade.new(Mapfacade.new(params[:location]).coordinates).forecast
-    render json: ForecastSerializer.new(forecast)
+  def index
+    forecast = ForecastFacade.new(MapFacade.new(params[:location]).coordinates).forecast
+    render json: ForecastSerializer.format_forecast(forecast)
   end
 end
