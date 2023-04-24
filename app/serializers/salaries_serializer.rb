@@ -23,6 +23,7 @@ class SalariesSerializer
               max: "$"salary[:salary_percentiles][:percentile_75].sprintf('%.2f').gsub(/(\d)(?=(\d{3})+(?!\d))/, '\\1,')
             end
            }
+          end
         }
       }
     }
