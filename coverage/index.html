@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-04-25T11:27:47-06:00">2023-04-25T11:27:47-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-04-25T13:10:00-06:00">2023-04-25T13:10:00-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -5642,7 +5642,7 @@
 
             
 
-            <code class="ruby">          password_confirmation: &quot;password&quot;,</code>
+            <code class="ruby">          password_confirmation: &quot;password&quot;</code>
           </li>
         </div>
       
@@ -5730,7 +5730,7 @@
 
             
 
-            <code class="ruby">          password_confirmation: &quot;blargh&quot;,</code>
+            <code class="ruby">          password_confirmation: &quot;blargh&quot;</code>
           </li>
         </div>
       
@@ -5818,7 +5818,7 @@
 
             
 
-            <code class="ruby">          password_confirmation: &quot;&quot;,</code>
+            <code class="ruby">          password_confirmation: &quot;&quot;</code>
           </li>
         </div>
       
@@ -5873,7 +5873,7 @@
 
             
 
-            <code class="ruby">      before { post &quot;/api/v1/users&quot;, params: valid_attributes }</code>
+            <code class="ruby">      before { post &quot;/api/v1/users&quot;, params: valid_attributes, as: :json }</code>
           </li>
         </div>
       
@@ -6082,7 +6082,7 @@
 
             
 
-            <code class="ruby">      before { post &quot;/api/v1/users&quot;, params: valid_attributes }</code>
+            <code class="ruby">      before { post &quot;/api/v1/users&quot;, params: valid_attributes, as: :json }</code>
           </li>
         </div>
       
@@ -6115,7 +6115,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/users&quot;, params: password_mismatch_attributes</code>
+            <code class="ruby">        post &quot;/api/v1/users&quot;, params: password_mismatch_attributes, as: :json</code>
           </li>
         </div>
       
@@ -6247,7 +6247,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/users&quot;, params: valid_attributes</code>
+            <code class="ruby">        post &quot;/api/v1/users&quot;, params: valid_attributes, as: :json</code>
           </li>
         </div>
       
@@ -6379,7 +6379,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/users&quot;, params: invalid_attributes</code>
+            <code class="ruby">        post &quot;/api/v1/users&quot;, params: invalid_attributes, as: :json</code>
           </li>
         </div>
       

@@ -5,7 +5,7 @@ RSpec.describe "Users", type: :request do
       {
           email: "whatever@example.com",
           password: "password",
-          password_confirmation: "password",
+          password_confirmation: "password"
       }
     end
 
@@ -13,7 +13,7 @@ RSpec.describe "Users", type: :request do
       {
           email: "whoever@example.com",
           password: "password",
-          password_confirmation: "blargh",
+          password_confirmation: "blargh"
       }
     end
 
@@ -21,12 +21,12 @@ RSpec.describe "Users", type: :request do
       {
           email: "wrong@example.com",
           password: "",
-          password_confirmation: "",
+          password_confirmation: ""
       }
     end
 
     context "when the request is valid" do
-      before { post "/api/v1/users", params: valid_attributes }
+      before { post "/api/v1/users", params: valid_attributes, as: :json }
 
       it "creates a new user" do
         pretty = JSON.parse(response.body)
@@ -45,10 +45,10 @@ RSpec.describe "Users", type: :request do
     end
 
     context "when the request is invalid" do
-      before { post "/api/v1/users", params: valid_attributes }
+      before { post "/api/v1/users", params: valid_attributes, as: :json }
 
       it "returns an error for bad mismatched passwords" do
-        post "/api/v1/users", params: password_mismatch_attributes
+        post "/api/v1/users", params: password_mismatch_attributes, as: :json
         pretty = JSON.parse(response.body)
 
         expect(response).to have_http_status(:bad_request)
@@ -60,7 +60,7 @@ RSpec.describe "Users", type: :request do
       end
 
       it "returns an error for existing user" do
-        post "/api/v1/users", params: valid_attributes
+        post "/api/v1/users", params: valid_attributes, as: :json
         pretty = JSON.parse(response.body)
 
         expect(response).to have_http_status(:bad_request)
@@ -72,7 +72,7 @@ RSpec.describe "Users", type: :request do
       end
 
       it "returns an error for missing field(s)" do
-        post "/api/v1/users", params: invalid_attributes
+        post "/api/v1/users", params: invalid_attributes, as: :json
         pretty = JSON.parse(response.body)
 
         expect(response).to have_http_status(:bad_request)
