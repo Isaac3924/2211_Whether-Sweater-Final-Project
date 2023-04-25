@@ -247,6 +247,49 @@
           null
         ]
       },
+      "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/isaacalter/Desktop/turing_work/3mod/final_project/Whether_Sweater/spec/requests/api/v1/forecast_request_spec.rb": {
         "lines": [
           1,
@@ -502,6 +545,6 @@
         ]
       }
     },
-    "timestamp": 1682437466
+    "timestamp": 1682439555
   }
 }
