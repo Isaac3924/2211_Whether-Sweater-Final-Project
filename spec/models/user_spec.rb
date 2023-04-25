@@ -15,5 +15,11 @@ RSpec.describe User, type: :model do
 
       expect(user.find_by_email(user.email)).to eq(user)
     end
+
+    it 'can find a user by api' do
+      user = User.create!(email: 'email@email.com', password: 'password', password_confirmation: 'password', api_key:"123")
+
+      expect(user.find_by_api(user.api_key)).to eq(user)
+    end
   end
 end

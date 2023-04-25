@@ -70,5 +70,19 @@ RSpec.describe ForecastFacade do
       expect(json_body[:forecast][:forecastday][0][:hour][0][:condition]).to have_key(:icon)
       expect(json_body[:forecast][:forecastday][0][:hour][0][:condition][:icon]).to be_a(String)
     end
+
+    it "can return upcoming weather conditions based on time entered", :vcr do
+      json_body = @test_facade.eta_forecast("2023-04-30 13:00")
+
+      expect(json_body).to be_a(Hash)
+      expect(json_body).to have_key(:time)
+      expect(json_body[:time]).to be_a(String)
+      expect(json_body).to have_key(:temp_f)
+      expect(json_body[:temp_f]).to be_a(Float)
+      expect(json_body).to have_key(:condition) 
+      expect(json_body[:condition]).to be_a(Hash)
+      expect(json_body[:condition]).to have_key(:text)
+      expect(json_body[:condition][:text]).to be_a(String)
+    end
   end
 end

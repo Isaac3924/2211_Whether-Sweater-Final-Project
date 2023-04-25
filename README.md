@@ -107,4 +107,12 @@ Things you may want to cover:
    ```js
    rails server
    ```
-7. Visit http://localhost:5000 in your web browser to confirm that the app is running. Notice the port of 5000 on the backend. It is assumed that the front end service will need to be running concurrently on localhost:3000
+7. Visit http://localhost:5000 in your web browser to confirm that the app is running. Notice the port of 5000 on the backend. It is assumed that the front end service will need to be running concurrently on localhost:3000, if a frontend is being utilized.
+
+8. While the server is running you can test http://localhost:5000/api/v1/users, http://localhost:5000/api/v1/sessions, and http://localhost:5000/api/v1/road_trip. A single use has been supplied in the database seeds file to assist with tests, especially for road trip.
+
+9. If needed, delete spec/fixtures folder, especially if spec tests aren't passing. (Unsure if the data in those vcrs will become outdated)
+
+9. Run ber. It might take some time if fixtures was deleted as the vcrs will need to be remade.
+
+10. If you have a front end that can call on the endpoints listed in step 8, feel free to. Should return a json response, with the body of it holding the requested/expected JSON payload.
