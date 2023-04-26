@@ -71,6 +71,26 @@ RSpec.describe ForecastFacade do
       expect(json_body[:forecast][:forecastday][0][:hour][0][:condition][:icon]).to be_a(String)
     end
 
+    it "can return the current weather json framework from the cordinate string", :vcr do
+      json_body = @test_facade.current_weather
+
+      expect(json_body).to be_a(Hash)
+      expect(json_body).to have_key(:last_updated)
+      expect(json_body).to have_key(:temperature)
+      expect(json_body[:temperature]).to be_a(Float)
+      expect(json_body).to have_key(:feels_like)
+      expect(json_body[:feels_like]).to be_a(Float)
+      expect(json_body).to have_key(:humidity)
+      expect(json_body[:humidity]).to be_a(Integer)
+      expect(json_body).to have_key(:uvi)
+      expect(json_body[:uvi]).to be_a(Float)
+      expect(json_body).to have_key(:visibility)
+      expect(json_body[:visibility]).to be_a(Float)
+      expect(json_body).to have_key(:condition)
+      expect(json_body[:condition]).to be_a(String)
+      expect(json_body[:icon]).to be_a(String)
+    end
+
     it "can return upcoming weather conditions based on time entered", :vcr do
       json_body = @test_facade.eta_forecast("2023-04-30 13:00")
 
@@ -83,6 +103,48 @@ RSpec.describe ForecastFacade do
       expect(json_body[:condition]).to be_a(Hash)
       expect(json_body[:condition]).to have_key(:text)
       expect(json_body[:condition][:text]).to be_a(String)
+    end
+
+    it "can return the upcoming weather json framework from the cordinate string", :vcr do
+      json_body = @test_facade.upcoming_weather
+      
+      expect(json_body).to be_an(Array)
+      expect(json_body.length).to eq(5)
+      expect(json_body[0]).to have_key(:date)
+      expect(json_body[0][:date]).to be_a(String)
+      expect(json_body[0][:date]).to include("-")
+      expect(json_body[0]).to have_key(:sunrise)
+      expect(json_body[0][:sunrise]).to be_a(String)
+      expect(json_body[0][:sunrise]).to include(" AM")
+      expect(json_body[0]).to have_key(:sunset)
+      expect(json_body[0][:sunset]).to be_a(String)
+      expect(json_body[0][:sunset]).to include(" PM")
+      expect(json_body[0]).to have_key(:max_temp)
+      expect(json_body[0][:max_temp]).to be_a(Float)
+      expect(json_body[0]).to have_key(:min_temp)
+      expect(json_body[0][:min_temp]).to be_a(Float)
+      expect(json_body[0]).to have_key(:condition)
+      expect(json_body[0][:condition]).to be_a(String)
+      expect(json_body[0]).to have_key(:icon)
+      expect(json_body[0][:icon]).to be_a(String)
+      expect(json_body[0][:icon]).to include("//cdn.")
+    end
+
+    it "can return the hourly weather json framework from the cordinate string", :vcr do
+      json_body = @test_facade.hourly_weather
+      
+      expect(json_body).to be_an(Array)
+      expect(json_body.length).to eq(24)
+      expect(json_body[0]).to have_key(:time)
+      expect(json_body[0][:time]).to be_a(String)
+      expect(json_body[0][:time]).to include(":00")
+      expect(json_body[0]).to have_key(:temperature)
+      expect(json_body[0][:temperature]).to be_a(Float)
+      expect(json_body[0]).to have_key(:conditions)
+      expect(json_body[0][:conditions]).to be_a(String)
+      expect(json_body[0]).to have_key(:icon)
+      expect(json_body[0][:icon]).to be_a(String)
+      expect(json_body[0][:icon]).to include("//cdn.")
     end
   end
 end

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 26 Apr 2023 00:27:29 GMT
+      - Wed, 26 Apr 2023 00:27:31 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -51,9 +51,9 @@ http_interactions:
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - f2383b3cc157fab78c741b984fa979f0
+      - f87cfb6aed798b34b90d0604a48da40e
       Cdn-Cache:
-      - EXPIRED
+      - HIT
     body:
       encoding: ASCII-8BIT
       string: '{"location":{"name":"Newport","region":"Kentucky","country":"United
@@ -257,5 +257,5 @@ http_interactions:
         22:00","temp_c":6.4,"temp_f":43.5,"is_day":0,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/night/122.png","code":1009},"wind_mph":10.5,"wind_kph":16.9,"wind_degree":326,"wind_dir":"NNW","pressure_mb":1002.0,"pressure_in":29.6,"precip_mm":0.5,"precip_in":0.02,"humidity":93,"cloud":91,"feelslike_c":3.2,"feelslike_f":37.8,"windchill_c":3.2,"windchill_f":37.8,"heatindex_c":6.4,"heatindex_f":43.5,"dewpoint_c":5.4,"dewpoint_f":41.7,"will_it_rain":0,"chance_of_rain":45,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.3,"vis_miles":5.0,"gust_mph":14.1,"gust_kph":22.7,"uv":1.0},{"time_epoch":1682910000,"time":"2023-04-30
         23:00","temp_c":5.8,"temp_f":42.4,"is_day":0,"condition":{"text":"Patchy rain
         possible","icon":"//cdn.weatherapi.com/weather/64x64/night/176.png","code":1063},"wind_mph":9.6,"wind_kph":15.5,"wind_degree":324,"wind_dir":"NW","pressure_mb":1003.0,"pressure_in":29.61,"precip_mm":0.8,"precip_in":0.03,"humidity":92,"cloud":86,"feelslike_c":2.7,"feelslike_f":36.9,"windchill_c":2.7,"windchill_f":36.9,"heatindex_c":5.8,"heatindex_f":42.4,"dewpoint_c":4.6,"dewpoint_f":40.3,"will_it_rain":0,"chance_of_rain":68,"will_it_snow":0,"chance_of_snow":0,"vis_km":9.0,"vis_miles":5.0,"gust_mph":13.2,"gust_kph":21.2,"uv":1.0}]}]}}'
-  recorded_at: Wed, 26 Apr 2023 00:27:29 GMT
+  recorded_at: Wed, 26 Apr 2023 00:27:31 GMT
 recorded_with: VCR 6.1.0
