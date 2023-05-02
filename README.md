@@ -1,118 +1,46 @@
-# README
+# Whether Sweater
+Whether Sweater is an application that aggregates data from multiple external APIs and exposes them through a JSON API with CRUD functionality. This README provides instructions for setting up the application, and outlines the learning goals.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* outlines the learning goals
-
-* how someone can clone and set up your application and where they can get their own API keys
-
-* happy path endpoint use
-
-# Learning Goals
-
+## Learning Goals
 * Expose an API that aggregates data from multiple external APIs
-
 * Expose an API that requires an authentication token
-
 * Expose an API for CRUD functionality
+* Test both API consumption and exposure, making use of at least one mocking tool (VCR, Webmock, etc)
 
-* Determine completion criteria based on the needs of other developers
+## Features
+### Road Trip
+* Receives incoming data
+* Returns incoming data in specific format/pieces
+* Requires an API key for authentication
+* Utilizes external APIs
+* Returns a JSON payload in the body of the request
+## Setup
+1. Clone this repository to your local machine: **'git clone git@github.com:Isaac3924/2211_Whether-Sweater-Final-Project.git'**
+2. Install dependencies: **'bundle install'**
+3 .Configure the database by running **'rails db:setup'**
+4. Get the API key for MapQuest from this link: **https://developer.mapquest.com/documentation/** and paste it into the **'config/application.yml'** file as a string value to the **'MAPQUEST_DATABASE_KEY'** variable.
+5. Get the API key for Weather API from this link: **https://www.weatherapi.com/** and paste it into the **'config/application.yml'** file as a string value to the **'WEATHER_DATABASE_KEY'** variable.
+6. Start the server by running **'rails server'**
+7. Visit **'http://localhost:5000'** in your web browser to confirm that the app is running.
+8. Test the API endpoints by visiting **'http://localhost:5000/api/v1/users'**, **'http://localhost:5000/api/v1/sessions'**, and **'http://localhost:5000/api/v1/road_trip'**.
+If you have a front-end that can call on the endpoints listed in step 8, you should receive a JSON response with the requested data. Orutilize Postman or similar API testing software.
 
-* Test both API consumption and exposure, making use of at least one mocking tool (VCR, Webmock, etc).
+## Authentication
+To register a user, send a POST request to **'/api/v1/users'** with the following parameters in the request body:
 
-## EXPOSE EXTERNAL APIS
+* **'email'**
+* **'password'**
+* **'password_confirmation'**
 
-* Ensure specific data is received
+To log in a user, send a POST request to **'/api/v1/sessions'** with the following parameters in the request body:
 
-* Use data from one API to retrieve data from another
+* **'email'**
+* **'password'**
 
-* Test for unwanted data, ensure only necessary data
+Both the register and login endpoints will return a JSON payload in the response body, including a generated API key for authentication.
 
-## REGISTER USER
+## Testing
+To run the tests, use the **'rspec'** command. The application uses VCR to mock external API calls, so the first run may take some time to generate the necessary VCR cassettes. If needed, delete the **'spec/fixtures'** folder, especially if spec tests aren't passing.
 
-* Recieve incoming data
-
-* Return incoming data in specific format/pieces
-
-* POST endpoint should NOT call your endpoint like /api/v0/users?email=person@woohoo.com&password=abc123&password_confirmation=abc123
-
-* Return a JSON payload in the body of the request, specifically
-
-* Create an object within the database based off of incoming data
-
-* Generate a unique API key
-
-* Utilize status codes
-
-* Provide description for expected errors
-
-* Setting up Auth
-
-## LOGIN USER
-
-* Recieve incoming data
-
-* Return incoming data in specific format/pieces
-
-* POST endpoint should NOT call your endpoint like /api/v0/sessions?email=person@woohoo.com&password=abc123
-
-* Return a JSON payload in the body of the request, specifically
-
-* Returns from database of existing object
-
-* Provide description for expected errors (tell a user which field (email/password) is incorrect, as this alerts malicious users how to attack your site)
-
-## FEATURE (ROAD TRIP)
-
-* Recieve incoming data
-
-* Return incoming data in specific format/pieces
-
-* POST endpoint should NOT call your endpoint like /api/v0/road_trip?origin=Cincinatti,OH&destination=Chicago,IL&api_key=t1h2i3s4_i5s6_l7e8g9i10t11
-
-* Return a JSON payload in the body of the request, specifically
-
-* Require an API key (AUTH)
-
-* If no API key, 401 status (AUTH)
-
-* Utilize external API
-
-# Setup
-
-1. Clone this repository to your local machine 
- ```sh
-   git clone git@github.com:Isaac3924/2211_Whether-Sweater-Final-Project.git
-   ```
-
-2. Install dependencies
-   ```sh
-   bundle install
-   ```
-3. Configure the database by running rails db:setup:
-   ```js
-   rails db:setup
-   ```
-
-4. Get the API key for map quest from this link: https://developer.mapquest.com/documentation/ and clicking 'Grab the Key'. Paste it into the config/application.yml as a string value to the MAPQUEST_DATABASE_KEY variable.
-
-5. Get the API key for map quest from this link: https://www.weatherapi.com/ and clicking 'Sign Up'. Fill in the forms with your email and password of choice, complete captcha, agreeing to terms, and clicking 'Sign Up'. You will be ridrected to a page saying to ait for a verification email in your provided email. THERE IS NO VERFICATION. Go ahead and log in. Copy the provided API key and paste it into the config/application.yml as a string value to the WEATHER_DATABASE_KEY variable.
-
-6. Start the server by running rails server:
-   ```js
-   rails server
-   ```
-7. Visit http://localhost:5000 in your web browser to confirm that the app is running. Notice the port of 5000 on the backend. It is assumed that the front end service will need to be running concurrently on localhost:3000, if a frontend is being utilized.
-
-8. While the server is running you can test http://localhost:5000/api/v1/users, http://localhost:5000/api/v1/sessions, and http://localhost:5000/api/v1/road_trip. A single use has been supplied in the database seeds file to assist with tests, especially for road trip.
-
-9. If needed, delete spec/fixtures folder, especially if spec tests aren't passing. (Unsure if the data in those vcrs will become outdated)
-
-9. Run ber. It might take some time if fixtures was deleted as the vcrs will need to be remade.
-
-10. If you have a front end that can call on the endpoints listed in step 8, feel free to. Should return a json response, with the body of it holding the requested/expected JSON payload.
+## Conclusion
+You're now ready to use Whether Sweater. If you encounter any issues, please submit an issue on GitHub or contact the project creator.
