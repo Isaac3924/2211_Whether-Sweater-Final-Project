@@ -23,7 +23,7 @@ Whether Sweater is an application that aggregates data from multiple external AP
 6. Start the server by running **'rails server'**
 7. Visit **'http://localhost:5000'** in your web browser to confirm that the app is running.
 8. Test the API endpoints by visiting **'http://localhost:5000/api/v1/users'**, **'http://localhost:5000/api/v1/sessions'**, and **'http://localhost:5000/api/v1/road_trip'**.
-If you have a front-end that can call on the endpoints listed in step 8, you should receive a JSON response with the requested data. Orutilize Postman or similar API testing software.
+If you have a front-end that can call on the endpoints listed in step 8, you should receive a JSON response with the requested data. Or utilize Postman or similar API testing software.
 
 ## Authentication
 To register a user, send a POST request to **'/api/v1/users'** with the following parameters in the request body:
