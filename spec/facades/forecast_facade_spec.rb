@@ -35,7 +35,7 @@ RSpec.describe ForecastFacade do
       expect(json_body).to have_key(:forecast)
       expect(json_body[:forecast]).to have_key(:forecastday)
       expect(json_body[:forecast][:forecastday]).to be_an(Array)
-      expect(json_body[:forecast][:forecastday].length).to eq(6)
+      expect(json_body[:forecast][:forecastday].length).to eq(3)
       expect(json_body[:forecast][:forecastday][1]).to have_key(:date)
       expect(json_body[:forecast][:forecastday][1][:date]).to be_a(String)
       expect(json_body[:forecast][:forecastday][1]).to have_key(:day)
@@ -92,7 +92,7 @@ RSpec.describe ForecastFacade do
     end
 
     it "can return upcoming weather conditions based on time entered", :vcr do
-      json_body = @test_facade.eta_forecast("2023-04-30 13:00")
+      json_body = @test_facade.eta_forecast("2024-10-10 13:00")
 
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:time)
@@ -107,9 +107,10 @@ RSpec.describe ForecastFacade do
 
     it "can return the upcoming weather json framework from the cordinate string", :vcr do
       json_body = @test_facade.upcoming_weather
+      binding.pry
       
       expect(json_body).to be_an(Array)
-      expect(json_body.length).to eq(5)
+      expect(json_body.length).to eq(3)
       expect(json_body[0]).to have_key(:date)
       expect(json_body[0][:date]).to be_a(String)
       expect(json_body[0][:date]).to include("-")

@@ -27,7 +27,8 @@ class ForecastFacade
   end
 
   def upcoming_weather
-    forecast[:forecast][:forecastday].last(5).map do |day|
+    binding.pry
+    forecast[:forecast][:forecastday].last(3).map do |day|
       {
         date: day[:date],
         sunrise: day[:astro][:sunrise],

@@ -1,6 +1,6 @@
 class ForecastService
   def get_forecast(location)
-    get_url("/v1/forecast.json?&days=6", {q: location})
+    get_url("/v1/forecast.json?&days=3", {q: location})
   end
 
   def conn
