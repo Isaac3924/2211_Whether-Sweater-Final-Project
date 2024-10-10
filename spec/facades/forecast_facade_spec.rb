@@ -107,7 +107,6 @@ RSpec.describe ForecastFacade do
 
     it "can return the upcoming weather json framework from the cordinate string", :vcr do
       json_body = @test_facade.upcoming_weather
-      binding.pry
       
       expect(json_body).to be_an(Array)
       expect(json_body.length).to eq(3)
