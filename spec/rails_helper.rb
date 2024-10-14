@@ -68,6 +68,7 @@ RSpec.configure do |config|
     config.hook_into :webmock
     # config.filter_sensitive_data('<PROPUBLICA_API_KEY>') { ENV["PROPUBLICA_API_KEY"] }
     config.configure_rspec_metadata!
+    config.default_cassette_options = { record: :new_episodes }
   end
   
   Shoulda::Matchers.configure do |config|

@@ -83,7 +83,9 @@ RSpec.describe "Roadtrip API", type: :request do
       before { get "/api/v1/road_trip", params: valid_attributes2, as: :json }
 
       it "is a json" do
+        binding.pry
         pretty = JSON.parse(response.body)
+        binding.pry
 
         expect(pretty).to be_a(Hash)
       end

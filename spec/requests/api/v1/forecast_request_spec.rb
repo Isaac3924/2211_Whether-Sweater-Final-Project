@@ -9,7 +9,6 @@ RSpec.describe "Forecast API", type: :request do
       before { get "/api/v1/forecast", params: valid_location }
 
       it "is a json" do
-        # binding.pry
         expect(JSON.parse(response.body)).to be_a(Hash)
       end
 

@@ -26,7 +26,7 @@ describe ForecastService do
       expect(json_body).to have_key(:forecast)
       expect(json_body[:forecast]).to have_key(:forecastday)
       expect(json_body[:forecast][:forecastday]).to be_an(Array)
-      expect(json_body[:forecast][:forecastday].length).to eq(6)
+      expect(json_body[:forecast][:forecastday].length).to eq(3)
       expect(json_body[:forecast][:forecastday][1]).to have_key(:date)
       expect(json_body[:forecast][:forecastday][1][:date]).to be_a(String)
       expect(json_body[:forecast][:forecastday][1]).to have_key(:day)

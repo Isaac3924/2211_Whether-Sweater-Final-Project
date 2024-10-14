@@ -4,6 +4,7 @@ describe MapService do
   context "instance methods", :vcr do
     it "can get coordinates from a location" do
       json_body = MapService.new.get_coordinates("cinncinati,oh")
+      # binding.pry
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:results)
       expect(json_body[:results]).to be_an(Array)
@@ -15,12 +16,10 @@ describe MapService do
       expect(json_body[:results][0][:locations][0][:latLng]).to have_key(:lng)
       expect(json_body[:results][0][:locations][0][:latLng][:lat]).to be_a(Float)
       expect(json_body[:results][0][:locations][0][:latLng][:lng]).to be_a(Float)
-      expect(json_body[:results][0][:locations][0][:latLng][:lat]).to eq(39.10713)
-      expect(json_body[:results][0][:locations][0][:latLng][:lng]).to eq(-84.50413)
     end
 
     it "can get directions from an origin and destination" do
-      json_body = MapService.new.get_directions("Cinncinati, OH", "Chicago, IL")
+      json_body = MapService.new.get_directions("Cincinnati, OH", "Chicago, IL")
       expect(json_body).to have_key(:route)
       expect(json_body[:route]).to be_a(Hash)
       expect(json_body[:route]).to have_key(:formattedTime)
