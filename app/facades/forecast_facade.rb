@@ -2,7 +2,6 @@ class ForecastFacade
   attr_reader :formatted_coordinates
 
   def initialize(coordinates)
-    # binding.pry
     @formatted_coordinates = "#{coordinates[:lat]},#{coordinates[:lng]}"
   end
 
@@ -65,6 +64,7 @@ class ForecastFacade
           end
         end
       end
+      {temp_f: "Trip too long. Cannot retrieve forecast.", condition: {text: ""}}
     end
   end
 

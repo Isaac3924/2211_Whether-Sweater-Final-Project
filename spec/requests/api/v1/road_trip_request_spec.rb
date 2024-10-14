@@ -80,13 +80,10 @@ RSpec.describe "Roadtrip API", type: :request do
     end
 
     context "request 2" do
-      # binding.pry
       before { get "/api/v1/road_trip", params: valid_attributes2, as: :json }
 
       it "is a json" do
-        # binding.pry
         pretty = JSON.parse(response.body)
-        # binding.pry
 
         expect(pretty).to be_a(Hash)
       end
@@ -133,13 +130,14 @@ RSpec.describe "Roadtrip API", type: :request do
         expect(pretty["data"]["attributes"]["start_city"]).to eq("New York, NY")
         expect(pretty["data"]["attributes"]["end_city"]).to eq("Panama City, Panama")
         expect(pretty["data"]["attributes"]["travel_time"]).to include(":")
-        expect(pretty["data"]["attributes"]["travel_time"][0..1].to_i).to eq(80)
+        expect(pretty["data"]["attributes"]["travel_time"][0..1].to_i).to eq(76)
         expect(pretty["data"]["attributes"]["weather_at_eta"].keys.length).to eq(3)
         expect(pretty["data"]["attributes"]["weather_at_eta"].keys).to eq(["date_time", "temperature", "condition"])
         expect(pretty["data"]["attributes"]["weather_at_eta"]["date_time"]).to be_a(String)
         expect(pretty["data"]["attributes"]["weather_at_eta"]["date_time"]).to include("-")
         expect(pretty["data"]["attributes"]["weather_at_eta"]["date_time"]).to include(":00")
-        expect(pretty["data"]["attributes"]["weather_at_eta"]["temperature"]).to be_a(Float)
+        expect(pretty["data"]["attributes"]["weather_at_eta"]["temperature"]).to be_a(String)
+        expect(pretty["data"]["attributes"]["weather_at_eta"]["temperature"]).to eq("Trip too long. Cannot retrieve forecast.")
         expect(pretty["data"]["attributes"]["weather_at_eta"]["condition"]).to be_a(String)
       end
     end

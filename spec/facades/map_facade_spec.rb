@@ -12,12 +12,10 @@ RSpec.describe MapFacade do
     end
 
     it "can return the values of the correct city", :vcr do
-      # binding.pry
       expect(@test_facade.check_city).to eq(true)
     end
 
     it "can get coordinates from a location", :vcr do
-      # binding.pry
       expect(@test_facade.coordinates).to be_a(Hash)
       expect(@test_facade.coordinates).to have_key(:lat)
       expect(@test_facade.coordinates).to have_key(:lng)

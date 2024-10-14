@@ -4,7 +4,6 @@ describe MapService do
   context "instance methods", :vcr do
     it "can get coordinates from a location" do
       json_body = MapService.new.get_coordinates("cinncinati,oh")
-      # binding.pry
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:results)
       expect(json_body[:results]).to be_an(Array)
