@@ -3,12 +3,13 @@ require "rails_helper"
 RSpec.describe "Forecast API", type: :request do
   describe "GET /api/v1/forecast?location=cincinatti,oh", :vcr do
     let(:valid_location) do
-      { location: "cincinatti,oh" }
+      { location: "cincinnati,oh" }
     end
     context "when the request is valid" do
       before { get "/api/v1/forecast", params: valid_location }
 
       it "is a json" do
+        # binding.pry
         expect(JSON.parse(response.body)).to be_a(Hash)
       end
 

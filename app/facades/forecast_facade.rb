@@ -2,6 +2,7 @@ class ForecastFacade
   attr_reader :formatted_coordinates
 
   def initialize(coordinates)
+    # binding.pry
     @formatted_coordinates = "#{coordinates[:lat]},#{coordinates[:lng]}"
   end
 

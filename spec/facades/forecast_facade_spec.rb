@@ -92,7 +92,7 @@ RSpec.describe ForecastFacade do
     end
 
     it "can return upcoming weather conditions based on time entered", :vcr do
-      json_body = @test_facade.eta_forecast("2024-10-10 13:00")
+      json_body = @test_facade.eta_forecast("2024-10-15 13:00")
 
       expect(json_body).to be_a(Hash)
       expect(json_body).to have_key(:time)

@@ -6,7 +6,22 @@ class MapFacade
   end
 
   def coordinates
-    coordinates = service.get_coordinates(@location)[:results][0][:locations][0][:latLng]
+    if check_city
+      coordinates = service.get_coordinates(@location)[:results][0][:locations][0][:latLng]
+    else
+      #Maybe look into raising an error here.
+      return nil
+    end
+  end
+
+  def check_city
+    loc_array = service.get_coordinates(@location)[:results][0][:locations]
+    loc_array.each do |loc|
+      if loc[:adminArea5] == @location.split(',').first.capitalize
+        return true
+      end
+    end
+    return false
   end
 
   def directions(destination)

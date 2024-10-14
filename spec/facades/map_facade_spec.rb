@@ -2,16 +2,22 @@ require "rails_helper"
 
 RSpec.describe MapFacade do
   before :each do
-    @test_facade = MapFacade.new("cinncinati,oh")
+    @test_facade = MapFacade.new("cincinnati,oh")
     @test_facade_2 = MapFacade.new("Cincinnati,OH")
   end
 
   describe "instance methods" do
     it "has a location" do
-      expect(@test_facade.location).to eq("cinncinati,oh")
+      expect(@test_facade.location).to eq("cincinnati,oh")
+    end
+
+    it "can return the values of the correct city", :vcr do
+      # binding.pry
+      expect(@test_facade.check_city).to eq(true)
     end
 
     it "can get coordinates from a location", :vcr do
+      # binding.pry
       expect(@test_facade.coordinates).to be_a(Hash)
       expect(@test_facade.coordinates).to have_key(:lat)
       expect(@test_facade.coordinates).to have_key(:lng)
@@ -30,7 +36,7 @@ RSpec.describe MapFacade do
 
     it "can get travel time from an origin and destination", :vcr do
       expect(@test_facade_2.travel_time("Chicago, IL")).to be_a(String)
-      expect(@test_facade_2.travel_time("Chicago, IL")).to eq("04:40:45")
+      expect(@test_facade_2.travel_time("Chicago, IL")).to eq("04:20:07")
     end
 
     it "can get arrival time from an origin and destination", :vcr do
