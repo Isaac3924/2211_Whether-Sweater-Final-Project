@@ -9,15 +9,16 @@ class MapFacade
     if check_city
       coordinates = service.get_coordinates(@location)[:results][0][:locations][0][:latLng]
     else
-      #Maybe look into raising an error here.
-      return nil
+      # binding.pry
+      render json: { error: 'Cannot find requested city coordinates' }, status: 400
     end
   end
 
   def check_city
+    # binding.pry
     loc_array = service.get_coordinates(@location)[:results][0][:locations]
     loc_array.each do |loc|
-      if loc[:adminArea5] == @location.split(',').first.capitalize
+      if loc[:adminArea5].downcase == @location.split(',').first.downcase
         return true
       end
     end

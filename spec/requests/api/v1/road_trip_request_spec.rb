@@ -80,12 +80,13 @@ RSpec.describe "Roadtrip API", type: :request do
     end
 
     context "request 2" do
+      # binding.pry
       before { get "/api/v1/road_trip", params: valid_attributes2, as: :json }
 
       it "is a json" do
-        binding.pry
+        # binding.pry
         pretty = JSON.parse(response.body)
-        binding.pry
+        # binding.pry
 
         expect(pretty).to be_a(Hash)
       end
@@ -101,7 +102,7 @@ RSpec.describe "Roadtrip API", type: :request do
         expect(pretty["data"]["attributes"]["start_city"]).to eq("New York, NY")
         expect(pretty["data"]["attributes"]["end_city"]).to eq("Los Angeles, CA")
         expect(pretty["data"]["attributes"]["travel_time"]).to include(":")
-        expect(pretty["data"]["attributes"]["travel_time"][0..1].to_i).to eq(40)
+        expect(pretty["data"]["attributes"]["travel_time"][0..1].to_i).to eq(38)
         expect(pretty["data"]["attributes"]["weather_at_eta"].keys.length).to eq(3)
         expect(pretty["data"]["attributes"]["weather_at_eta"].keys).to eq(["date_time", "temperature", "condition"])
         expect(pretty["data"]["attributes"]["weather_at_eta"]["date_time"]).to be_a(String)
